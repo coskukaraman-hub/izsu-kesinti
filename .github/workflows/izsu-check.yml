@@ -1,0 +1,27 @@
+name: izsu-kesinti-kontrol
+ 
+on:
+  schedule:
+    - cron: "*/5 * * * *"   # her 5 dakikada bir. GitHub Actions minimum garantisi ~5 dk.
+  workflow_dispatch: {}      # manuel tetikleme icin (test amacli)
+ 
+jobs:
+  kontrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+ 
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+ 
+      - name: Poller calistir
+        run: python izsu_poller.py
+ 
+      - name: state.json degisikligini commit et
+        run: |
+          git config user.name "izsu-bot"
+          git config user.email "izsu-bot@users.noreply.github.com"
+          git add state.json
+          git diff --cached --quiet || git commit -m "state guncelle"
+          git push
