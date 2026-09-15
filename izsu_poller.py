@@ -19,7 +19,7 @@ STATE_FILE = "state.json"
 TAKIP_LISTESI = ["Bornova", "Karsiyaka", "Gulyaka", "Reis", "Refet Bele", "Karabaglar"]
 
 # ntfy.sh konu adi - kendine ozel, tahmin edilemez bir isim sec
-NTFY_TOPIC = "izsu-kesinti-XXXXXX"
+NTFY_TOPIC = "izsu-kesinti-987654321"
 
 
 def veri_cek():
