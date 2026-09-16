@@ -22,10 +22,10 @@ STATE_FILE = "state.json"
 
 # TAKIP EDILECEK ILCE ADLARI (BUYUK HARF, Turkce karakter kullanma - siteyle birebir eslemesi icin
 # once script'i calistirip ciktidaki ilce adlarina bak, gerekirse duzelt)
-TAKIP_LISTESI = ["BORNOVA", "KARSIYAKA"]
+TAKIP_LISTESI = ["KARABAGLAR"]
 
 # ntfy.sh konu adi - kendine ozel, tahmin edilemez bir isim sec
-NTFY_TOPIC = "izsu-kesinti-XXXXXX"
+NTFY_TOPIC = "izsu-kesinti-987654321"
 
 
 def sayfa_cek(deneme: int = 3) -> str:
