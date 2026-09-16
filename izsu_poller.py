@@ -1,58 +1,72 @@
 #!/usr/bin/env python3
 """
-IZSU ariza kaynakli su kesintisi poller.
+IZSU ariza ve bakim bilgisi sorgulama sayfasindan (izsu.gov.tr) veri ceker.
+Bu sayfa JSON API degil, HTML tablo dondurur - BeautifulSoup ile parse edilir.
+
 Calisma mantigi:
-1. API'yi retry ile dener (3 deneme, artan bekleme).
-2. Basarisizsa uyari yazip exit 0 ile cik (API'nin cokuk olmasi
-   workflow'u kirmiziya dusurmesin - bu dis servis sorunu, script hatasi degil).
-3. Basariliysa: takip edilen ilce/mahalle listesine gore filtrele.
-4. state.json dosyasindaki onceki listeyle karsilastir.
-5. Yeni kayit varsa ntfy.sh uzerinden push bildirimi gonder.
-6. state.json guncelle (repo icinde tutulur, GitHub Actions commit atar).
+1. Sayfayi GET ile cek (retry ile, 3 deneme).
+2. "Ariza Bilgileri" ve "Planli Bakim Bilgileri" tablolarini parse et.
+3. Takip edilen ilce listesine gore filtrele.
+4. state.json'daki onceki listeyle karsilastir, yeni kayit varsa ntfy.sh ile bildir.
+5. state.json guncelle.
 """
 import json
 import sys
 import time
 import urllib.request
 
-API_URL = "https://openapi.izmir.bel.tr/api/izsu/arizakaynaklisukesintileri"
+from bs4 import BeautifulSoup
+
+PAGE_URL = "https://izsu.gov.tr/bilgi-merkezi/ariza-ve-bakim-bilgisi-sorgulama"
 STATE_FILE = "state.json"
 
-# TAKIP EDILECEK ILCE/MAHALLE ANAHTAR KELIMELERI - kendi bolgene gore duzenle
-TAKIP_LISTESI = ["Karabaglar"]
+# TAKIP EDILECEK ILCE ADLARI (BUYUK HARF, Turkce karakter kullanma - siteyle birebir eslemesi icin
+# once script'i calistirip ciktidaki ilce adlarina bak, gerekirse duzelt)
+TAKIP_LISTESI = ["BORNOVA", "KARSIYAKA"]
 
 # ntfy.sh konu adi - kendine ozel, tahmin edilemez bir isim sec
-NTFY_TOPIC = "izsu-kesinti-987654321"
+NTFY_TOPIC = "izsu-kesinti-XXXXXX"
 
 
-def veri_cek(deneme: int = 3) -> list:
+def sayfa_cek(deneme: int = 3) -> str:
     son_hata = None
     for i in range(deneme):
         try:
-            req = urllib.request.Request(API_URL, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=15) as r:
-                veri = json.loads(r.read().decode("utf-8"))
-            if isinstance(veri, dict):
-                for anahtar in ("data", "sonuc", "kayitlar", "result"):
-                    if anahtar in veri and isinstance(veri[anahtar], list):
-                        return veri[anahtar]
-                raise ValueError(f"Beklenmeyen sozluk formati, anahtarlar: {list(veri.keys())}")
-            return veri
+            req = urllib.request.Request(PAGE_URL, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=20) as r:
+                return r.read().decode("utf-8")
         except Exception as e:
             son_hata = e
             time.sleep(3 * (i + 1))
     raise son_hata
 
 
+def tablolari_parse_et(html: str) -> list:
+    """Sayfadaki tum tablolari satir satir sozluk listesine cevirir."""
+    soup = BeautifulSoup(html, "html.parser")
+    kayitlar = []
+    for tablo in soup.find_all("table"):
+        basliklar = [th.get_text(strip=True) for th in tablo.find_all("th")]
+        if not basliklar:
+            continue
+        for tr in tablo.find_all("tr"):
+            hucreler = [td.get_text(strip=True) for td in tr.find_all("td")]
+            if not hucreler or len(hucreler) != len(basliklar):
+                continue
+            kayit = dict(zip(basliklar, hucreler))
+            kayitlar.append(kayit)
+    return kayitlar
+
+
 def kayit_id(kayit: dict) -> str:
     return json.dumps(kayit, sort_keys=True, ensure_ascii=False)
 
 
-def filtrele(veri: list) -> list:
+def filtrele(kayitlar: list) -> list:
     sonuc = []
-    for kayit in veri:
-        metin = json.dumps(kayit, ensure_ascii=False).lower()
-        if any(k.lower() in metin for k in TAKIP_LISTESI):
+    for kayit in kayitlar:
+        metin = json.dumps(kayit, ensure_ascii=False).upper()
+        if any(k in metin for k in TAKIP_LISTESI):
             sonuc.append(kayit)
     return sonuc
 
@@ -82,12 +96,17 @@ def bildirim_gonder(baslik: str, mesaj: str) -> None:
 
 def main():
     try:
-        veri = veri_cek()
+        html = sayfa_cek()
+        kayitlar = tablolari_parse_et(html)
     except Exception as e:
         print(f"UYARI: veri alinamadi, bu calisma atlaniyor: {e}", file=sys.stderr)
         return
 
-    filtreli = filtrele(veri)
+    if not kayitlar:
+        print("UYARI: sayfa acildi ama tablo bulunamadi - site yapisi degismis olabilir.", file=sys.stderr)
+        return
+
+    filtreli = filtrele(kayitlar)
     guncel_id_seti = {kayit_id(k) for k in filtreli}
     eski_id_seti = eski_state_oku()
 
