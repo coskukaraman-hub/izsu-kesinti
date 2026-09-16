@@ -19,10 +19,10 @@ API_URL = "https://openapi.izmir.bel.tr/api/izsu/arizakaynaklisukesintileri"
 STATE_FILE = "state.json"
 
 # TAKIP EDILECEK ILCE/MAHALLE ANAHTAR KELIMELERI - kendi bolgene gore duzenle
-TAKIP_LISTESI = ["Bornova", "Karsiyaka"]
+TAKIP_LISTESI = ["Karabaglar"]
 
 # ntfy.sh konu adi - kendine ozel, tahmin edilemez bir isim sec
-NTFY_TOPIC = "izsu-kesinti-XXXXXX"
+NTFY_TOPIC = "izsu-kesinti-987654321"
 
 
 def veri_cek(deneme: int = 3) -> list:
