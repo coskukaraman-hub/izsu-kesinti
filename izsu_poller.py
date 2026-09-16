@@ -22,7 +22,7 @@ STATE_FILE = "state.json"
 
 # TAKIP EDILECEK ILCE ADLARI (BUYUK HARF, Turkce karakter kullanma - siteyle birebir eslemesi icin
 # once script'i calistirip ciktidaki ilce adlarina bak, gerekirse duzelt)
-TAKIP_LISTESI = ["KARABAGLAR"]
+TAKIP_LISTESI = ["KARABAGLAR", "BORNOVA"]
 
 # ntfy.sh konu adi - kendine ozel, tahmin edilemez bir isim sec
 NTFY_TOPIC = "izsu-kesinti-987654321"
