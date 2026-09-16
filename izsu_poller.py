@@ -2,8 +2,8 @@
 """
 IZSU ariza kaynakli su kesintisi poller.
 Calisma mantigi:
-1. Birincil API'yi dene. 500/baglanti hatasi alirsan CKAN yedek API'yi dene.
-2. Ikisi de basarisizsa uyari yazip exit 0 ile cik (API'nin cokuk olmasi
+1. API'yi retry ile dener (3 deneme, artan bekleme).
+2. Basarisizsa uyari yazip exit 0 ile cik (API'nin cokuk olmasi
    workflow'u kirmiziya dusurmesin - bu dis servis sorunu, script hatasi degil).
 3. Basariliysa: takip edilen ilce/mahalle listesine gore filtrele.
 4. state.json dosyasindaki onceki listeyle karsilastir.
@@ -13,54 +13,35 @@ Calisma mantigi:
 import json
 import sys
 import time
-import urllib.error
 import urllib.request
 
 API_URL = "https://openapi.izmir.bel.tr/api/izsu/arizakaynaklisukesintileri"
-# Birincil API cokerse (500) buradan deneriz - CKAN datastore_search
-CKAN_URL = (
-    "https://acikveri.bizizmir.com/api/3/action/datastore_search"
-    "?resource_id=adecfa0d-3f19-427f-bf40-25117921f938&limit=1000"
-)
 STATE_FILE = "state.json"
 
 # TAKIP EDILECEK ILCE/MAHALLE ANAHTAR KELIMELERI - kendi bolgene gore duzenle
-TAKIP_LISTESI = ["Karabaglar"]
+TAKIP_LISTESI = ["Bornova", "Karsiyaka"]
 
 # ntfy.sh konu adi - kendine ozel, tahmin edilemez bir isim sec
-NTFY_TOPIC = "izsu-kesinti-987654321"
+NTFY_TOPIC = "izsu-kesinti-XXXXXX"
 
 
-def _get(url: str, deneme: int = 3):
+def veri_cek(deneme: int = 3) -> list:
     son_hata = None
     for i in range(deneme):
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+            req = urllib.request.Request(API_URL, headers={"User-Agent": "Mozilla/5.0"})
             with urllib.request.urlopen(req, timeout=15) as r:
-                return json.loads(r.read().decode("utf-8"))
+                veri = json.loads(r.read().decode("utf-8"))
+            if isinstance(veri, dict):
+                for anahtar in ("data", "sonuc", "kayitlar", "result"):
+                    if anahtar in veri and isinstance(veri[anahtar], list):
+                        return veri[anahtar]
+                raise ValueError(f"Beklenmeyen sozluk formati, anahtarlar: {list(veri.keys())}")
+            return veri
         except Exception as e:
             son_hata = e
-            time.sleep(2 * (i + 1))
+            time.sleep(3 * (i + 1))
     raise son_hata
-
-
-def veri_cek() -> list:
-    """Birincil API'yi dener, basarisizsa CKAN yedegine duser. Liste dondurur."""
-    try:
-        veri = _get(API_URL)
-        if isinstance(veri, dict):
-            for anahtar in ("data", "sonuc", "kayitlar", "result"):
-                if anahtar in veri and isinstance(veri[anahtar], list):
-                    return veri[anahtar]
-            raise ValueError(f"Beklenmeyen sozluk formati, anahtarlar: {list(veri.keys())}")
-        return veri
-    except Exception as e1:
-        print(f"UYARI: birincil API basarisiz ({e1}), CKAN yedegi deneniyor.", file=sys.stderr)
-        veri = _get(CKAN_URL)
-        kayitlar = veri.get("result", {}).get("records", [])
-        if not kayitlar:
-            raise ValueError("CKAN yedeginden de kayit alinamadi.")
-        return kayitlar
 
 
 def kayit_id(kayit: dict) -> str:
