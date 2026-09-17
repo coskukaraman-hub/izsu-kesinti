@@ -1,4 +1,8 @@
 [
+  "{\"Arıza Tipi\": \"Branşman Arızası\", \"Açıklama\": \"BORNOVA İLÇESİ ÜMİT MAHALLESİ 7407/2  SOKAK İÇİNDE MEYDAN GELEN BRANŞMAN BORU AR...\", \"Kesinti Süresi\": \"17.09.2026 saat 10:35 ile 12:35 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"KEMALPAŞA, ÜMİT\", \"İlçe\": \"BORNOVA\"}",
+  "{\"Arıza Tipi\": \"Elektrik Arızası\", \"Açıklama\": \"Gdz elektriğin arızasından dolayı bölgeye su verilemiyor\", \"Kesinti Süresi\": \"17.09.2026 saat 10:49 ile 13:00 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ÇAMKULE, MERKEZ, SERİNTEPE\", \"İlçe\": \"BORNOVA\"}",
   "{\"Kesinti Başlangıç\": \"18.09.2026 - 20:00\", \"Kesinti Bitiş\": \"19.09.2026 - 08:00\", \"Kısa Açıklama\": \"Terfi İstasyonu’nda gerçekleştirilecek montaj ve vana değişimi çalışmaları nede...\", \"Mahalleler\": \"EVKA 4, EĞRİDERE, ÇAMİÇİ\", \"İlçe\": \"BORNOVA\", \"İş Adı\": \"Bornova ilçesi;  Evka 4, Eğridere ve Çamiçi mahalleleri su kesintisi hk.\"}",
+  "{\"İlçe - Mahalleler↑\": \"BORNOVAKEMALPAŞA, ÜMİT\"}",
+  "{\"İlçe - Mahalleler↑\": \"BORNOVAÇAMKULE, MERKEZ, SERİNTEPE\"}",
   "{\"İlçe - İş Adı\": \"BORNOVABornova ilçesi;  Evka 4, Eğridere ve Çamiçi mahalleleri su kesintisi hk.\"}"
 ]
