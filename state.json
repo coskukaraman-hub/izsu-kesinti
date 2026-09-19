@@ -1,8 +1,8 @@
 [
-  "{\"Arıza Tipi\": \"Branşman Arızası\", \"Açıklama\": \"BORNOVA İLÇESİ ÜMİT MAHALLESİ 7407/2  SOKAK İÇİNDE MEYDAN GELEN BRANŞMAN BORU AR...\", \"Kesinti Süresi\": \"17.09.2026 saat 10:35 ile 12:35 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"KEMALPAŞA, ÜMİT\", \"İlçe\": \"BORNOVA\"}",
-  "{\"Arıza Tipi\": \"Elektrik Arızası\", \"Açıklama\": \"Gdz elektriğin arızasından dolayı bölgeye su verilemiyor\", \"Kesinti Süresi\": \"17.09.2026 saat 10:49 ile 13:00 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ÇAMKULE, MERKEZ, SERİNTEPE\", \"İlçe\": \"BORNOVA\"}",
-  "{\"Kesinti Başlangıç\": \"18.09.2026 - 20:00\", \"Kesinti Bitiş\": \"19.09.2026 - 08:00\", \"Kısa Açıklama\": \"Terfi İstasyonu’nda gerçekleştirilecek montaj ve vana değişimi çalışmaları nede...\", \"Mahalleler\": \"EVKA 4, EĞRİDERE, ÇAMİÇİ\", \"İlçe\": \"BORNOVA\", \"İş Adı\": \"Bornova ilçesi;  Evka 4, Eğridere ve Çamiçi mahalleleri su kesintisi hk.\"}",
-  "{\"İlçe - Mahalleler↑\": \"BORNOVAKEMALPAŞA, ÜMİT\"}",
-  "{\"İlçe - Mahalleler↑\": \"BORNOVAÇAMKULE, MERKEZ, SERİNTEPE\"}",
-  "{\"İlçe - İş Adı\": \"BORNOVABornova ilçesi;  Evka 4, Eğridere ve Çamiçi mahalleleri su kesintisi hk.\"}"
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"215 SK NO:28\", \"Kesinti Süresi\": \"19.09.2026 saat 11:15 ile 13:15 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ARAP HASAN, BASIN SİTESİ\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"4016 SK NO:22\", \"Kesinti Süresi\": \"19.09.2026 saat 11:50 ile 13:50 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"AŞIK VEYSEL, KARABAĞLAR, SELVİLİ, YUNUS EMRE\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"4217 SK NO:7\", \"Kesinti Süresi\": \"19.09.2026 saat 11:43 ile 13:43 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"PEKER, YUNUS EMRE\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARARAP HASAN, BASIN SİTESİ\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARAŞIK VEYSEL, KARABAĞLAR, SELVİLİ, YUNUS EMRE\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARPEKER, YUNUS EMRE\"}"
 ]
