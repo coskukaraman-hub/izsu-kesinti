@@ -1,4 +1,6 @@
 [
-  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"5714/29 SOK NO 4\", \"Kesinti Süresi\": \"28.09.2026 saat 10:22 ile 12:22 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"BOZYAKA, ÇALIKUŞU, GENERAL ASIM GÜNDÜZ, SARIYER, UĞUR MUMCU\", \"İlçe\": \"KARABAĞLAR\"}",
-  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARBOZYAKA, ÇALIKUŞU, GENERAL ASIM GÜNDÜZ, SARIYER, UĞUR MUMCU\"}"
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"3124 sokak no .13 önü için.\", \"Kesinti Süresi\": \"28.09.2026 saat 16:55 ile 18:55 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"BOZYAKA, GÜLYAKA\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"4999 sokak no .25 önü için.\", \"Kesinti Süresi\": \"28.09.2026 saat 18:25 ile 20:25 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ABDİ İPEKÇİ, GÜNALTAY, İHSAN ALYANAK, PEKER, SARIYER, SELVİLİ, YUNUS EMRE\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARABDİ İPEKÇİ, GÜNALTAY, İHSAN ALYANAK, PEKER, SARIYER, SELVİLİ, YUNUS EMRE\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARBOZYAKA, GÜLYAKA\"}"
 ]
