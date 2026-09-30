@@ -1,6 +1,9 @@
 [
-  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"3972 SOK NO 39\", \"Kesinti Süresi\": \"30.09.2026 saat 10:18 ile 12:18 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ALİ FUAT ERDEN, CENNETÇEŞME, ÖZGÜR, YURDOĞLU, YÜZBAŞI ŞERAFETTİN\", \"İlçe\": \"KARABAĞLAR\"}",
-  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARALİ FUAT ERDEN, CENNETÇEŞME, ÖZGÜR, YURDOĞLU, YÜZBAŞI ŞERAFETTİN\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"5673/5 SOK İÇİ(DEDİZ ELEKTRİK ÇALIŞMASINDAN DOLAYI SU HATTI KESİLMİŞTİR)\", \"Kesinti Süresi\": \"30.09.2026 saat 12:03 ile 17:03 arasında yaklaşık 5 saat su kesintisi olacaktır.\", \"Mahalleler\": \"GÜNALTAY, KARABAĞLAR, KİBAR, SARIYER, SELVİLİ, UĞUR MUMCU, YUNUS EMRE\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"5714/4 sok içi(GEDİZ ELEKTRİK ÇALIMASINDAN DOLAYI SU HATTI KESİLMİŞTİR)\", \"Kesinti Süresi\": \"30.09.2026 saat 12:05 ile 17:05 arasında yaklaşık 5 saat su kesintisi olacaktır.\", \"Mahalleler\": \"BOZYAKA, CENNETOĞLU, ÇALIKUŞU, GENERAL ASIM GÜNDÜZ, SARIYER, UĞUR MUMCU\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"5741 SOK NO 63\", \"Kesinti Süresi\": \"30.09.2026 saat 09:33 ile 17:33 arasında yaklaşık 8 saat su kesintisi olacaktır.\", \"Mahalleler\": \"BOZYAKA, CENNETOĞLU, ÇALIKUŞU, GENERAL ASIM GÜNDÜZ, SARIYER, UĞUR MUMCU\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Vana Arızası\", \"Açıklama\": \"4290 SK NO:7\", \"Kesinti Süresi\": \"30.09.2026 saat 16:21 ile 18:21 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"AYDIN\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARAYDIN\"}",
   "{\"İlçe - Mahalleler↑\": \"KARABAĞLARBOZYAKA, CENNETOĞLU, ÇALIKUŞU, GENERAL ASIM GÜNDÜZ, SARIYER, UĞUR MUMCU\"}",
-  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARESENTEPE, FAHRETTİN ALTAY, GENERAL KAZIM ÖZALP, MUAMMER AKAR, ÜÇKUYULAR\"}"
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARGÜNALTAY, KARABAĞLAR, KİBAR, SARIYER, SELVİLİ, UĞUR MUMCU, YUNUS EMRE\"}"
 ]
