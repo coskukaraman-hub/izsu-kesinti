@@ -1,4 +1,8 @@
 [
-  "{\"Arıza Tipi\": \"Boru Deplasman Çalışması\", \"Açıklama\": \"175/3 SOKAK NO.35 ÖNÜ İÇİN.\", \"Kesinti Süresi\": \"06.10.2026 saat 14:30 ile 19:30 arasında yaklaşık 5 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ADNAN SÜVARİ, BASIN SİTESİ, MALİYECİLER, ŞEHİTLER, VATAN\", \"İlçe\": \"KARABAĞLAR\"}",
-  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARADNAN SÜVARİ, BASIN SİTESİ, MALİYECİLER, ŞEHİTLER, VATAN\"}"
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"9139 SOKAK İÇİ İÇİN.\", \"Kesinti Süresi\": \"08.10.2026 saat 12:20 ile 15:20 arasında yaklaşık 3 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ARAP HASAN, BASIN SİTESİ, VATAN\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"9170/3 SOKAK NO .1 ÖNÜ İÇİN.\", \"Kesinti Süresi\": \"08.10.2026 saat 09:30 ile 12:30 arasında yaklaşık 3 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ALİ FUAT CEBESOY, REFET BELE, TAHSİN YAZICI\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"AVNİ ANIL SOKAK NO.16 ÖNÜ İÇİN.\", \"Kesinti Süresi\": \"08.10.2026 saat 11:55 ile 14:55 arasında yaklaşık 3 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ESENTEPE, GENERAL ASIM GÜNDÜZ, MUAMMER AKAR, ÜÇKUYULAR\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARALİ FUAT CEBESOY, REFET BELE, TAHSİN YAZICI\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARARAP HASAN, BASIN SİTESİ, VATAN\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARESENTEPE, GENERAL ASIM GÜNDÜZ, MUAMMER AKAR, ÜÇKUYULAR\"}"
 ]
