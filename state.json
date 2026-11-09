@@ -1,4 +1,6 @@
 [
-  "{\"Arıza Tipi\": \"Ana Boru Arızası\", \"Açıklama\": \"4512 SOKAK NO:5\", \"Kesinti Süresi\": \"08.11.2026 saat 00:50 ile 02:50 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"BARIŞ, GÜNALTAY, SEVGİ\", \"İlçe\": \"KARABAĞLAR\"}",
-  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARBARIŞ, GÜNALTAY, SEVGİ\"}"
+  "{\"Arıza Tipi\": \"Şebeke Yenileme/Döşeme\", \"Açıklama\": \"108/8 SOKAK NO:37\", \"Kesinti Süresi\": \"09.11.2026 saat 10:05 ile 14:05 arasında yaklaşık 4 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ADNAN SÜVARİ, ESENYALI, MALİYECİLER, METİN OKTAY\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"Arıza Tipi\": \"Şebeke Yenileme/Döşeme\", \"Açıklama\": \"108/8 SOKAK NO:37\", \"Kesinti Süresi\": \"09.11.2026 saat 13:45 ile 15:45 arasında yaklaşık 2 saat su kesintisi olacaktır.\", \"Mahalleler\": \"ADNAN SÜVARİ, BASIN SİTESİ, MALİYECİLER, VATAN\", \"İlçe\": \"KARABAĞLAR\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARADNAN SÜVARİ, BASIN SİTESİ, MALİYECİLER, VATAN\"}",
+  "{\"İlçe - Mahalleler↑\": \"KARABAĞLARADNAN SÜVARİ, ESENYALI, MALİYECİLER, METİN OKTAY\"}"
 ]
